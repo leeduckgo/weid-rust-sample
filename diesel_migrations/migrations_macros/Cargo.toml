@@ -1,0 +1,40 @@
+[package]
+name = "migrations_macros"
+version = "2.0.0"
+authors = ["Sean Griffin <sean@seantheprogrammer.com>"]
+license = "MIT OR Apache-2.0"
+description = "Codegeneration macros for diesels embedded migrations"
+homepage = "https://diesel.rs"
+edition = "2018"
+
+[dependencies]
+quote = "1"
+proc-macro2 = "1"
+
+[dependencies.migrations_internals]
+version = "~2.0.0"
+path = "../migrations_internals"
+
+[dev-dependencies]
+tempfile = "3.1.0"
+dotenv = "0.15"
+cfg-if = "0.1.10"
+
+[dev-dependencies.diesel]
+version = "~2.0.0"
+path = "../../diesel"
+default-features = false
+
+[dev-dependencies.diesel_migrations]
+version = "~2.0.0"
+path = "../"
+default-features = false
+
+[lib]
+proc-macro = true
+
+[features]
+default = []
+sqlite = []
+postgres = []
+mysql = []

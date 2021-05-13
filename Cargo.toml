@@ -1,0 +1,45 @@
+[package]
+name = "weid-rust-sample"
+version = "0.1.0"
+authors = ["leeduckgo <albertschr@163.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pretty_env_logger = "0.3"
+log = "0.4"
+
+# weid light client
+
+reqwest = { version = "0.10", features = ["json"] }
+tokio = { version = "0.2", features = ["full"] }
+weid-light-client= { path="./weid-light-client", version = "0.1.0"}
+
+# eth 
+wagyu-ethereum = { path = "./ethereum", version = "0.6.3" }
+wagyu-model = { path = "./model", version = "0.6.3" }
+
+
+arrayvec = { version = "0.5.1" }
+base58 = { version = "0.1" }
+clap = { version = "~2.33.1" }
+colored = { version = "1.9" }
+digest = { version = "0.9.0" }
+either = { version = "1.5.3" }
+failure = { version = "0.1.8" }
+hex = { version = "0.4.2" }
+lazy_static = { version = "1.4.0" }
+rand = { version = "0.7" }
+rand_core = { version = "0.5.1" }
+safemem = { version = "0.3.3" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+tiny-keccak = { version = "1.4" }
+
+# database
+
+diesel = { version = "2.0.0", path = "./diesel", features = ["sqlite", "chrono"] }
+chrono = { version = "0.4.19", default-features = false, features = ["clock", "std"] }
+serde_derive = "1.0"
+dotenv = "0.15"
